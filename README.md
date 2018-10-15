@@ -1,6 +1,6 @@
 # cloud-scanner-generic
 
-Generic package of adapters for [cloud-scanner]() library. Includes services and their required configurations.
+Generic package of adapters for [cloud-scanner](https://github.com/Microsoft/cloud-scanner) library. Includes services and their required configurations.
 
 ### Running Locally
 
