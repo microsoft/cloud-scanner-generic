@@ -65,6 +65,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/source/generated
 
 # PyBuilder
 target/
@@ -103,5 +104,12 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+.env
 .idea/
 .vscode/
+
+docs/.buildinfo
+docs/.nojekyll
+docs/_sources/
+docs/_static/
+docs/generated/
