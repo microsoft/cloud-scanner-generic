@@ -10,5 +10,3 @@ class ElasticSearchConfig(Config):
     @property
     def access_key(self):
         return self.get_property("ELASTIC_SEARCH_ACCESS_KEY")
-
-
