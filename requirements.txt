@@ -1,4 +1,4 @@
 elasticsearch
 PyMySQL
 requests
-git+https://${GITHUB_TOKEN}@github.com/Microsoft/cloud-scanner.git
+git+https://{GITHUB_TOKEN}:x-oauth-basic@github.com/Microsoft/cloud-scanner.git
