@@ -1,4 +1,4 @@
 elasticsearch
 PyMySQL
 requests
-git+https://${GITHUB_TOKEN}@github.com/Microsoft/cloud-scanner.git
+--index-url https://test.pypi.org/project/cloud-scanner/0.1/ cloud_scanner
