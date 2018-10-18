@@ -14,7 +14,8 @@ class RequestHelper:
 
         Args:
             url: The url to post
-            **kwargs: Additional arguments to pass to the underlying post method
+            **kwargs: Additional arguments to pass to the
+            underlying post method
         Returns:
             The Http Response
         """
