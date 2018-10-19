@@ -2,9 +2,8 @@ import uuid
 
 from elasticsearch import Elasticsearch
 
-from cloud_scanner.contracts.resource_storage_factory import register_resource_storage
-from cloud_scanner.contracts.table_storage import TableStorage
-from cloud_scanner_generic.config.elastic_search_config import ElasticSearchConfig
+from cloud_scanner.contracts import TableStorage, register_resource_storage
+from cloud_scanner_generic.config import ElasticSearchConfig
 
 
 @register_resource_storage('elastic_serach', lambda: ElasticSearch.create())
@@ -19,7 +18,8 @@ class ElasticSearch(TableStorage):
     def write(self, resource):
         """Write resource to table.
 
-        :param resource: Expecting Resource object (see Common.Contracts.Resource)
+        :param resource: Expecting Resource object
+        (see Common.Contracts.Resource)
         :return: None
         """
         entry = resource.to_dict()

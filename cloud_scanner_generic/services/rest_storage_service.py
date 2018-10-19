@@ -1,15 +1,14 @@
-import urllib
-
 import requests
-
+import urllib
 from cloud_scanner.config import ProcessConfig
-from cloud_scanner.contracts.resource import Resource
-from cloud_scanner.contracts.resource_storage_factory import register_resource_storage
-from cloud_scanner.contracts.table_storage import TableStorage
+from cloud_scanner.contracts import (
+    Resource, register_resource_storage, TableStorage)
+
 from .request_helper import RequestHelper
 
 
-@register_resource_storage("rest_storage_service", lambda: RestStorageService.create())
+@register_resource_storage("rest_storage_service",
+                           lambda: RestStorageService.create())
 class RestStorageService(TableStorage):
 
     _url = None

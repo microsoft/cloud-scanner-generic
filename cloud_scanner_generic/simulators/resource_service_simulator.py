@@ -1,24 +1,31 @@
-from cloud_scanner.contracts.resource_service import ResourceService, ResourceFilter
-from cloud_scanner.contracts.resource_service_factory import register_resource_service
+from cloud_scanner.contracts import (
+    ResourceService, ResourceFilter, register_resource_service)
 
 
-@register_resource_service("simulator", lambda subscription_id: ResourceServiceSimulator())
+@register_resource_service("simulator",
+                           lambda subscription_id: ResourceServiceSimulator())
 class ResourceServiceSimulator(ResourceService):
     @property
     def name(self):
         return "simulator"
 
     resources = [{
-        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/microsoft.insights/components/wwwwwwwwwwww',
+        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/'
+              'resourceGroups/yyyyyyyyyyyy/providers/microsoft.insights/'
+              'components/wwwwwwwwwwww',
         'name': 'wwwwwwwwwwww',
                 'type': 'microsoft.insights/components',
                 'location': 'southcentralus',
                 'tags': {
-                    'hidden-link:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Web/sites/wwwwwwwwwwww': 'Resource'
+                    'hidden-link:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-'
+                    'xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/'
+                    'Microsoft.Web/sites/wwwwwwwwwwww': 'Resource'
                 },
         'kind': 'web'
     }, {
-        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/Microsoft.ServiceBus/namespaces/wwwwwwwwwwww',
+        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/'
+              'resourceGroups/yyyyyyyyyyyy/providers/Microsoft.ServiceBus/'
+              'namespaces/wwwwwwwwwwww',
         'name': 'wwwwwwwwwwww',
                 'type': 'Microsoft.ServiceBus/namespaces',
                 'location': 'southcentralus',
@@ -28,7 +35,9 @@ class ResourceServiceSimulator(ResourceService):
                     'tier': 'Standard'
                 }
     }, {
-        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Storage/storageAccounts/wwwwwwwwwwww',
+        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/'
+              'resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Storage/'
+              'storageAccounts/wwwwwwwwwwww',
         'name': 'wwwwwwwwwwww',
                 'type': 'Microsoft.Storage/storageAccounts',
                 'location': 'southcentralus',
@@ -39,13 +48,17 @@ class ResourceServiceSimulator(ResourceService):
                     'tier': 'Standard'
                 }
     }, {
-        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Web/serverFarms/wwwwwwwwwwww',
+        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/'
+              'resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Web/'
+              'serverFarms/wwwwwwwwwwww',
         'name': 'wwwwwwwwwwww',
                 'type': 'Microsoft.Web/serverFarms',
                 'location': 'southcentralus',
                 'kind': 'functionapp'
     }, {
-        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Web/sites/wwwwwwwwwwww',
+        'id': '/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/'
+              'resourceGroups/yyyyyyyyyyyy/providers/Microsoft.Web/sites/'
+              'wwwwwwwwwwww',
         'name': 'wwwwwwwwwwww',
                 'type': 'Microsoft.Web/sites',
                 'location': 'southcentralus',
