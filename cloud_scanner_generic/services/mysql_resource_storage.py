@@ -1,8 +1,7 @@
 import pymysql
 
-from cloud_scanner.contracts.table_storage import TableStorage
-from cloud_scanner.contracts.resource_storage_factory import register_resource_storage
-from cloud_scanner_generic.config.mysql_config import MySqlConfig
+from cloud_scanner.contracts import TableStorage, register_resource_storage
+from cloud_scanner_generic.config import MySqlConfig
 
 
 @register_resource_storage("mysql", lambda: MySqlResourceStorage.create())
@@ -44,9 +43,11 @@ class MySqlResourceStorage(TableStorage):
             connection = self._connect()
             with connection.cursor() as cursor:
                 sql = '''INSERT INTO aws_resources
-                        (resourceid, arn, name, type, region, account, service, hash, updatecycle, created_at, updated_at)
+                        (resourceid, arn, name, type, region, account, service,
+                         hash, updatecycle, created_at, updated_at)
                         VALUES
-                        (%s, %s, %s, %s, %s, %s, %s, %s, UNIX_TIMESTAMP(), NOW(), NOW())
+                        (%s, %s, %s, %s, %s, %s, %s, %s, UNIX_TIMESTAMP(),
+                         NOW(), NOW())
                         ON DUPLICATE KEY UPDATE
                         resourceid = %s,
                         arn = %s,
