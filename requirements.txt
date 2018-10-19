@@ -1,3 +1,4 @@
 elasticsearch
 PyMySQL
 requests
+flake8
