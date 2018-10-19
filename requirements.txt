@@ -1,4 +1,3 @@
 elasticsearch
 PyMySQL
 requests
--e ../cloud-scanner
