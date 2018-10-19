@@ -65,4 +65,4 @@ class RestStorageService(TableStorage):
         return None
 
     def delete(self, partition_key, row_key):
-            raise NotImplementedError("delete not currently supported")
+        raise NotImplementedError("delete not currently supported")
