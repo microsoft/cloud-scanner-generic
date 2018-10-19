@@ -13,7 +13,9 @@ source env/bin/activate
 (env) pytest
 ```
 
-### Storage Adapters
+### Required environment variables to run with cloud_scanner
+
+#### Storage Adapters
 - ElasticSearch
     - Needs `ELASTIC_SEARCH_URL` and `ELASTIC_SEARCH_ACCESS_KEY`
 - MySQL
