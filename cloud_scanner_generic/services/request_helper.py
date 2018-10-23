@@ -12,12 +12,10 @@ class RequestHelper:
         """Creates a Session object if it does not already exist and performs
         an Http post on the object.
 
-        Args:
-            url: The url to post
-            **kwargs: Additional arguments to pass to the underlying
-            post method
-        Returns:
-            The Http Response
+        :param url: The URL to send HTTP post request
+        :param kwargs: Additional args to set
+
+        :returns: The Http Response
         """
         try:
             if RequestHelper._session is None:

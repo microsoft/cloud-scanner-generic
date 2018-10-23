@@ -2,3 +2,4 @@ elasticsearch
 PyMySQL
 requests
 flake8
+Sphinx
