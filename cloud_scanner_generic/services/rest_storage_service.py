@@ -1,10 +1,11 @@
-import requests
 import urllib
+
 from cloud_scanner.config import ProcessConfig
 from cloud_scanner.contracts import (
     Resource, register_resource_storage, TableStorage)
 
-from .request_helper import RequestHelper
+from cloud_scanner_generic.services.errors import NotSupportedError
+from cloud_scanner_generic.services.request_helper import RequestHelper
 
 
 @register_resource_storage("rest_storage_service",
@@ -55,13 +56,13 @@ class RestStorageService(TableStorage):
         RequestHelper.post(post_url, json=entries)
 
     def check_entry_exists(self, entry):
-        raise NotImplementedError("write not currently supported")
+        raise NotSupportedError("write not currently supported")
 
     def query_list(self):
-        return []
+        return NotSupportedError("query_list not currently supported")
 
     def query(self, partition_key, row_key):
-        return None
+        return NotSupportedError("query not currently supported")
 
     def delete(self, partition_key, row_key):
-        raise NotImplementedError("delete not currently supported")
+        raise NotSupportedError("delete not currently supported")
