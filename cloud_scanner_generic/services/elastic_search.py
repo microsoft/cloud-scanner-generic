@@ -19,7 +19,7 @@ class ElasticSearch(TableStorage):
         """Write resource to table.
 
         :param resource: Expecting Resource object
-        (see Common.Contracts.Resource)
+            (see Common.Contracts.Resource)
         :return: None
         """
         entry = resource.to_dict()
