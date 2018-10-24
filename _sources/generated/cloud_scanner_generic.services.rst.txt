@@ -1,0 +1,46 @@
+cloud\_scanner\_generic.services package
+========================================
+
+Submodules
+----------
+
+cloud\_scanner\_generic.services.elastic\_search module
+-------------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.services.elastic_search
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner\_generic.services.mysql\_resource\_storage module
+----------------------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.services.mysql_resource_storage
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner\_generic.services.request\_helper module
+-------------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.services.request_helper
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner\_generic.services.rest\_storage\_service module
+--------------------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.services.rest_storage_service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cloud_scanner_generic.services
+    :members:
+    :undoc-members:
+    :show-inheritance:

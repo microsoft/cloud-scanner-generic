@@ -1,0 +1,30 @@
+cloud\_scanner\_generic.config package
+======================================
+
+Submodules
+----------
+
+cloud\_scanner\_generic.config.elastic\_search\_config module
+-------------------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.config.elastic_search_config
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner\_generic.config.mysql\_config module
+---------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.config.mysql_config
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cloud_scanner_generic.config
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+cloud_scanner_generic
+=====================
+
+.. toctree::
+   :maxdepth: 4
+
+   cloud_scanner_generic

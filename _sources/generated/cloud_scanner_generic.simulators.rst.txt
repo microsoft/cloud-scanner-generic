@@ -1,0 +1,22 @@
+cloud\_scanner\_generic.simulators package
+==========================================
+
+Submodules
+----------
+
+cloud\_scanner\_generic.simulators.resource\_service\_simulator module
+----------------------------------------------------------------------
+
+.. automodule:: cloud_scanner_generic.simulators.resource_service_simulator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cloud_scanner_generic.simulators
+    :members:
+    :undoc-members:
+    :show-inheritance:
