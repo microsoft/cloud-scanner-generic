@@ -1,8 +1,16 @@
-# cloud-scanner-generic
+# Cloud Scanner (Generic)
+
+[![Build Status](https://travis-ci.com/Microsoft/cloud-scanner-generic.svg?token=nXyWFYxRu6tVxUMJAuJr&branch=master)](https://travis-ci.com/Microsoft/cloud-scanner-generic)
+[![PyPI](https://img.shields.io/pypi/v/cloud-scanner-generic.svg)](https://pypi.org/project/cloud-scanner-generic/)
 
 Generic package of adapters for [cloud-scanner](https://github.com/Microsoft/cloud-scanner) library. Includes services and their required configurations.
 
-### Running Locally
+**Note: This library was developed by the Microsoft Commercial Software Engineering team as a tool for the Open Source community to use and contribute to as they see fit. Use at your own risk!**
+
+## Developer Documentation
+[Read the API docs](https://microsoft.github.io/cloud-scanner-generic/)
+
+## Running Locally
 
 You can run unit tests in a Python 3.6 virtual environment:
 
@@ -13,9 +21,9 @@ source env/bin/activate
 (env) pytest
 ```
 
-### Required environment variables to run with cloud_scanner
+## Required environment variables to run with cloud_scanner
 
-#### Storage Adapters
+### Storage Adapters
 - ElasticSearch
     - Needs `ELASTIC_SEARCH_URL` and `ELASTIC_SEARCH_ACCESS_KEY`
 - MySQL
@@ -23,7 +31,7 @@ source env/bin/activate
 - Rest API Post Request
     - Needs `REST_STORAGE_URL`
 
-# Contributing
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
