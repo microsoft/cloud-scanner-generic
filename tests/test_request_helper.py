@@ -1,6 +1,6 @@
 from unittest.mock import patch
 from .unittest_base import TestCase
-from cloud_scanner_generic.services import RequestHelper
+from cloud_scanner_generic.services.request_helper import RequestHelper
 from requests import Session
 
 class TestRequestHelper(TestCase):

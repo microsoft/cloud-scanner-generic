@@ -5,7 +5,7 @@ import requests
 from cloud_scanner_generic.services import RestStorageService
 from cloud_scanner.contracts import Resource
 from .unittest_base import TestCase
-from cloud_scanner_generic.services import RequestHelper
+from cloud_scanner_generic.services.request_helper import RequestHelper
 
 
 class TestRestResourceStorage(TestCase):
