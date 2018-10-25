@@ -1,4 +1,4 @@
-cloud-scanner-core
+cloud-scanner
 elasticsearch
 PyMySQL
 requests
