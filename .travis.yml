@@ -15,13 +15,13 @@ deploy:
   - provider: pages
     skip_cleanup: true
     local-dir: docs/build/html
-    github-token: "$GITHUB_TOKEN"
+    github-token: $GITHUB_TOKEN
     keep-history: true
     on:
       tags: true
   - provider: pypi
     skip_cleanup: true
-    user: "$PYPI_USERNAME"
+    user: $PYPI_USERNAME
     password:
       secure: bLUqpMYAHKtNN5LKRxcLgBYKfDejYYYszC2baouSW8U07Tuvep2JaUKnZqEOqh0VInzK8pBugHz1Brf6xD6rZKi6S4stqgN773oO7ew3FJxY2nR3BaDgoDWStz/YMZq7pMGbveldBI4835/cmOj97WIM1Nk5VgUND4OEqsCthvRk5nL77A4zZDj64sm8SlfpY/HBhNi4L74rcP+KBDHT8DaSfQTNKSyy/hNjJFmvF8C2ne92TrhreSVF6RscJNda8FVHsBMPHsfYD+a/stpsBPV1IEYuvacDThz/C4H7ZDzdi8DBIzgmUqbOt7/d8jJx6bQ7AMlhfqf2Iq16zm4iKJhuH4WJ5pDuOh3c1sbtYb6AcCYTziqnSg6voFP1pEdFmHyn6bmBEzD7moG8BNrdeTSAQ1PQHaFGVPsjDbb1CqQWd93zYLAqhyv/9t7bNtKl2ahMv1mL+xSvFiHOnDbAoGgucFro87LYstFc4xWJO8Wcl5Mg7JG/um+0U/xxE+W7PaU87DuKfLKyiLAB74jIEOKXfQNfmJE5n+yRGVmjiPBQ/1rSlI3un1R3mRQn31YIe1arzbXh+A+KhcIttWVRM3hmWaFUhkOitr2xgBQJRArwaE4bKuZqSbIYFQYmp6vwr/HCW52Q4XprbQAYyFMdkYBo6lEM2b+MxmQmFyUtpGc=
     distributions: sdist bdist_wheel
