@@ -12,6 +12,14 @@ cloud\_scanner\_generic.services.elastic\_search module
     :undoc-members:
     :show-inheritance:
 
+cloud\_scanner\_generic.services.errors module
+----------------------------------------------
+
+.. automodule:: cloud_scanner_generic.services.errors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 cloud\_scanner\_generic.services.mysql\_resource\_storage module
 ----------------------------------------------------------------
 
