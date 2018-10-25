@@ -9,7 +9,7 @@ You can run unit tests in a Python 3.6 virtual environment:
 ```python
 virtualenv env
 source env/bin/activate
-(env) pip install --index-url https://test.pypi.org/simple/ -r requirements-test.txt --extra-index-url https://pypi.org/simple/ -r requirements.txt
+(env) pip install -r requirements.txt
 (env) pytest
 ```
 
