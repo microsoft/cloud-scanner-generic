@@ -1,36 +1,32 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - pip install --index-url https://test.pypi.org/simple/ -r requirements-test.txt --extra-index-url https://pypi.org/simple/ -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - pytest
-  - make sphinx
-  - flake8 --ignore=F401 cloud_scanner_generic
+- pytest
+- make sphinx
+- flake8 --ignore=F401 cloud_scanner_generic
 before_deploy:
-  # Generate Sphinx docs
-  - make sphinx
-  # Generate PIP package distros
-  - pip install --upgrade setuptools wheel
-  - python setup.py sdist bdist_wheel
+- make sphinx
+- pip install --upgrade setuptools wheel
+- python setup.py sdist bdist_wheel
 deploy:
-  # Deploy Sphinx docs to github pages
-  - provider: pages
-    skip_cleanup: true
-    local-dir: docs/build/html
-    github-token:
-      secure: "XN/WVT73RqhJwjus/7WFkcgzNIPDvzlg7hvtO/Ur1VUcE44cORh7OuMk2OrC3+xQPUcPFVEJhnFEvkk3N8KYE9ITr9r3ZzPRSALckMGptI1AZWguNQZLFZhkAobNM3ISxHDJCywkNPBdVn5aLAGz+QEuU/d0J1nwamAVzwlIqudMFZHniqGQJnhXCM4Ebief8vnmoUN5sX1erohCxK1k/E1pjTQHySBVkLrO+XrOr0XULUWmb0R+RYw7AX0uPrJ9v2Et7M5sFj9tF66J69uYmIhWBySY0NUtmbCDykw3Ie4z/Iq0GMPHML+MKyMxlfZfmACjbJaDxJ/QGsPD4cJDVNKIlC1n9acdORIMlsFai76XBsfzBTEQSc2zyt5vaFvRupA17y/+KMPUnZ9qaDS8Q7kbHKCAfTeCsec8zFngAFdXnrr4DDq7qgLQ8EJh0Lcl3XlKghpn68saVl4owj/uPDdPPZ306AnSmlGqRBr/nhcKF1vZ3+RUza5p69UFdSk6oB8qIoSOjhWNDLzubgPej3yGZ25rS/c9sNq7TPTvGxMrL1lXZtZffYytcCbi9ZM1KG0XcANS1GPcGZf6Dn63e8eU8hZqKILQ66njsxp6QOjXFStIr7WqYa0R7pUCcZnKI/v9Tsq317s2/JIc7hd8x8s+QyhIsYaWotwK4mHsUAk="
-    keep-history: true
-    on:
-      tags: true
-  # Deploy pypi package
-  - provider: pypi
-    skip_cleanup: true
-    user:
-      secure: "do3OiSK2LiHXS5SO+9jPhT4eOyyV2OQRBi8wQr5+Umguk4+xuBubFxmCpK2Rg1bDgaLcl0UBNPevl3ve7BbA72i2ITVihaHjGW7JssJCQ5v21sEKWnSdtFu+pmVHD6s4vIfx4yflEVLjb77tUG16AVnnzGxvgyGuW3LRUO6XAWDHIHLgLUyejvJu+Ts16ZchBBt1eAUohTXvQxiPgpsCvRB3uveP/CQJqq71ZuZY/LI8xQ822HvZLBloLXEucjZsjSV5N/i4hZe7upfdll3qxGUlh8PfQzRhSWqb5oRW+RMyOMzPk0XcovNA5J8YfR6/DoQG9yG+wAlXlKO4qArgmeuPTigv7SBqrE2OmnG+/7ejQepjrTdfFKw5sWv8XUP5pDTSQJyupnA/EGgzNKpLrM2YIbieE5qghFgHvMASPwO1kCmK2+1hySJdJTiprq1Lu5xlW6cW6ogUL2vDSBC+tqK1BL9o+a7WhpGXJxZqMxiQ8dwjzAdn4ThpHXQpr/+ET0FJcIrmBwxebs3eNQ0Qig13uVDNYd3Wma4DRGRk3ErD4sPpDRPko5lnhgpXsby3yMRr23uw4Rvin53WYTCL0cSt8nBJetbkRWXnHNw6Qr+MsqFhkb4nhTntP0mJhd6ZoaP0cSGha+mk+o8agRhUitmCXS+1TL/GVUJcQi/psfo="
-    password:
-      secure: "bqpFMEzFhbGc35xmKQSCUZH5Qpfql90tghNWy0a4+lE7wlohFqEpWz81I/TcRKx3uNbuK9MQY0ffhTwTinoo5/hXYMnXDOPdUsfE5rAipsN3/Ecv0+ziwuvJFr+uzYXOeBie86Uw7usim8ofYaUhwFA7Q5MB6vmRNle5+6tQOSRysO9VeTY4VknmLFI1V5EwoSt6rnOO12MD2jdQmLDkWlnemtEz/lsn6JWGuIzLS0k3uwlWyxaWawrb5LE/DDMpRDQzKcKZLRM5MNrnc7Sf+WE+dm4QV0hSA5H1fYhjkojd5q0h//bY72N8kDZcQ+F30E155dQQPGJFIgYlJEbfQW6Q3ZimyywjLYHiTKvcCSo9etIUGBHNVHyS9sEoJNJOlEljbvNyQQQAhO4QLy8uUF5PxroHjT465eS8Ta1JBxQyPkrv4R1RYEtjV4m934yg6AiYSVmg9cPR3PqNmNHdRyRebN7oLQ5ShCpULCPHzSUSACTGzJtXXe06WwdbUmdfGMM9jt0CQBTXnykSpuxtOp/lja+1yspx4j1ptwoKlazJ87JcCVSJKo1pm9dqSqC8r1AIXucCcfXVIlU7Rem8gw2S10zHUY25UlU1qZOxDSxNoKJFeTWZxvLe6APaXTAudkRjToGxbecGTxwOYbm6hCp874pOwfSxl1HhBlVwNqY="
-    distributions: "sdist bdist_wheel"
-    server: https://test.pypi.org/legacy/
-    on:
-      tags: true
+- provider: pages
+  skip_cleanup: true
+  local-dir: docs/build/html
+  github-token: "$GITHUB_TOKEN"
+  keep-history: true
+  on:
+    tags: true
+- provider: pypi
+  skip_cleanup: true
+  user: "$PYPI_USERNAME"
+  password:
+    secure: bLUqpMYAHKtNN5LKRxcLgBYKfDejYYYszC2baouSW8U07Tuvep2JaUKnZqEOqh0VInzK8pBugHz1Brf6xD6rZKi6S4stqgN773oO7ew3FJxY2nR3BaDgoDWStz/YMZq7pMGbveldBI4835/cmOj97WIM1Nk5VgUND4OEqsCthvRk5nL77A4zZDj64sm8SlfpY/HBhNi4L74rcP+KBDHT8DaSfQTNKSyy/hNjJFmvF8C2ne92TrhreSVF6RscJNda8FVHsBMPHsfYD+a/stpsBPV1IEYuvacDThz/C4H7ZDzdi8DBIzgmUqbOt7/d8jJx6bQ7AMlhfqf2Iq16zm4iKJhuH4WJ5pDuOh3c1sbtYb6AcCYTziqnSg6voFP1pEdFmHyn6bmBEzD7moG8BNrdeTSAQ1PQHaFGVPsjDbb1CqQWd93zYLAqhyv/9t7bNtKl2ahMv1mL+xSvFiHOnDbAoGgucFro87LYstFc4xWJO8Wcl5Mg7JG/um+0U/xxE+W7PaU87DuKfLKyiLAB74jIEOKXfQNfmJE5n+yRGVmjiPBQ/1rSlI3un1R3mRQn31YIe1arzbXh+A+KhcIttWVRM3hmWaFUhkOitr2xgBQJRArwaE4bKuZqSbIYFQYmp6vwr/HCW52Q4XprbQAYyFMdkYBo6lEM2b+MxmQmFyUtpGc=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+pypi:
+  password:
+    secure: bLUqpMYAHKtNN5LKRxcLgBYKfDejYYYszC2baouSW8U07Tuvep2JaUKnZqEOqh0VInzK8pBugHz1Brf6xD6rZKi6S4stqgN773oO7ew3FJxY2nR3BaDgoDWStz/YMZq7pMGbveldBI4835/cmOj97WIM1Nk5VgUND4OEqsCthvRk5nL77A4zZDj64sm8SlfpY/HBhNi4L74rcP+KBDHT8DaSfQTNKSyy/hNjJFmvF8C2ne92TrhreSVF6RscJNda8FVHsBMPHsfYD+a/stpsBPV1IEYuvacDThz/C4H7ZDzdi8DBIzgmUqbOt7/d8jJx6bQ7AMlhfqf2Iq16zm4iKJhuH4WJ5pDuOh3c1sbtYb6AcCYTziqnSg6voFP1pEdFmHyn6bmBEzD7moG8BNrdeTSAQ1PQHaFGVPsjDbb1CqQWd93zYLAqhyv/9t7bNtKl2ahMv1mL+xSvFiHOnDbAoGgucFro87LYstFc4xWJO8Wcl5Mg7JG/um+0U/xxE+W7PaU87DuKfLKyiLAB74jIEOKXfQNfmJE5n+yRGVmjiPBQ/1rSlI3un1R3mRQn31YIe1arzbXh+A+KhcIttWVRM3hmWaFUhkOitr2xgBQJRArwaE4bKuZqSbIYFQYmp6vwr/HCW52Q4XprbQAYyFMdkYBo6lEM2b+MxmQmFyUtpGc=
